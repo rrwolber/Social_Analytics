@@ -9,15 +9,16 @@ import seaborn as sns
 import numpy as np
 import datetime
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import apiInfo
 
 analyzer = SentimentIntensityAnalyzer()
 now = datetime.datetime.now()
 
 # Twitter API Keys
-consumer_key = 	'fDCqtO3uUj0q12AYbatnmZ0us'
-consumer_secret = 'i0880dyW9X2wu61Td0odDVcbyBka4J78vWGh60bZ7iM5dzCFnF'
-access_token = '939996960525754368-c0J2KNIYyoSfUFly3vJ3Xakp2EWMiuN'
-access_token_secret = 	'tnMlUtY2IVJgAbsDzSvVVMA58RDiYv2V7CzFpJ1P9EZq6'
+consumer_key = 	apiInfo.key
+consumer_secret = apiInfo.secret
+access_token = apiInfo.token
+access_token_secret = 	apiInfo.tokens
 
 # Twitter credentials
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
