@@ -56,7 +56,7 @@ def MentionSentiment(user,ask):
 
     sentiments_df = pd.DataFrame(sentiments)
 
-
+    #Plot graph of marked points to be published and push through visualization to tweet, mentioning user who requested the plot
     x_values = -1*(np.arange(len(sentiments_df)))
     y_values = sentiments_df["compound"]
     sns.set()
@@ -72,7 +72,8 @@ def MentionSentiment(user,ask):
     plt.gcf().clear()
     api.update_with_media(f'Sentiment{user}.png', status=f'New Tweet Analysis: {user} (Thanks @{ask}!)')
 
-    
+
+#Conditional rest period and record of analyses to avoid spam tag    
 while True:
     try:
         req = ""
